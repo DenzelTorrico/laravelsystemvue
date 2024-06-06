@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import Error from '../views/Error.vue';
 
 const Documentos = () => import('../views/Documentos.vue');
 const Usuarios = () => import('../views/Usuarios.vue');
@@ -19,6 +20,10 @@ const routes = [
         path: '/usuarios',
         name: 'usuarios',
         component: Usuarios,
+    },
+    {
+        path: '/:pathMath(.*)*',
+        component: Error,
     },
 ];
 

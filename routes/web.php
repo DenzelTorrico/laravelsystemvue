@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view("/{any}","app")->where("any", ".*");
+Route::view("/{pathMath}","app")->where("pathMath",".*");
