@@ -13,6 +13,9 @@ import Textarea from 'primevue/textarea';
 import Dropdown from 'primevue/dropdown';
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
+import Button from 'primevue/button';
+import ModalComponent from "./views/Components/ModalComponent.vue";
+import FloatLabel from 'primevue/floatlabel';
 
 const app = createApp(App);
 
@@ -20,9 +23,12 @@ app.use(PrimeVue);
 app.use(ToastService);
 app.use(router);
 
+app.component('Button', Button);
 app.component('InputText', InputText);
 app.component('Textarea', Textarea);
 app.component('Dropdown', Dropdown);
 app.component('Toast', Toast);
+app.component('FloatLabel', FloatLabel);
+app.component('modal-component', ModalComponent)
 
 app.mount('#app');
