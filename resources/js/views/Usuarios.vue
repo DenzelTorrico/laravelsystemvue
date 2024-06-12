@@ -7,7 +7,8 @@
             <Column field="email" header="Email"></Column>
             <Column header="Edit">
                 <template #body="slotProps">
-                    <Button severity="warning" @click="editUser(slotProps.data)">Editar</Button>
+                    <Button severity="warning" @click="editUser(slotProps.data)"><span class="pi pi-search"></span>Editar
+                    </Button>
                 </template>
              
             </Column>
