@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get("/register",[AuthController::class,"formRegister"])->name("form.register");
+Route::post("/register",[AuthController::class,"Register"])->name("auth.register");
+
+
+Route::get("/login",[AuthController::class,"formLogin"])->name("form.login");
+Route::post("/login",[AuthController::class,"Login"])->name("auth.login");
 
 Route::view("/{any}","app")->where("any", ".*");
 Route::view("/{pathMath}","app")->where("pathMath",".*");
