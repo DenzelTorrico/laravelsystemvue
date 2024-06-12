@@ -52,6 +52,7 @@ export default {
             this.objeto = user
         },
         deleteUser(user){
+            //delete data
             axios.delete(`/api/user/${user.id}`).then(response => {
               if(response.data == "delete") this.getUser()
             }).catch(error => console.log(error))
