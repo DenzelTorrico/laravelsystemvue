@@ -4,6 +4,7 @@ import Error from '../views/Error.vue';
 const Documentos = () => import('../views/Documentos.vue');
 const Usuarios = () => import('../views/Usuarios.vue');
 const DashBoard = () => import('../views/DashBoard.vue');
+const Productos = () => import('../views/Productos.vue');
 
 const routes = [
     {
@@ -20,6 +21,11 @@ const routes = [
         path: '/usuarios',
         name: 'usuarios',
         component: Usuarios,
+    },
+    {
+        path: '/productos',
+        name: 'productos',
+        component: Productos,
     },
     {
         path: '/:pathMath(.*)*',
