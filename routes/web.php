@@ -18,8 +18,8 @@ Route::get("/register",[AuthController::class,"formRegister"])->name("form.regis
 Route::post("/register",[AuthController::class,"Register"])->name("auth.register");
 
 
-Route::get("/login",[AuthController::class,"formLogin"])->name("form.login");
+Route::get("/login",[AuthController::class,"formLogin"])->name("form.login")->middleware("guest");
 Route::post("/login",[AuthController::class,"Login"])->name("auth.login");
 
-Route::view("/{any}","app")->where("any", ".*");
-Route::view("/{pathMath}","app")->where("pathMath",".*");
+Route::view("/{any}","app")->where("any", ".*")->middleware("auth");
+Route::view("/{pathMath}","app")->where("pathMath",".*")->middleware("auth");
