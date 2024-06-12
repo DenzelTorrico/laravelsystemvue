@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <h1>Usuarios</h1>
+        <h1>Usuarios registrados</h1>
         <DataTable :value="users" tableStyle="min-width: 50rem">
             <Column field="id" header="Id"></Column>
             <Column field="name" header="Name"></Column>
