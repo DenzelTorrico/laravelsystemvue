@@ -1,5 +1,6 @@
 import './bootstrap';
 import '../css/app.css';
+import 'primeicons/primeicons.css'
 import 'primevue/resources/themes/aura-light-green/theme.css'; // Tema de PrimeVue
 import 'primevue/resources/primevue.min.css'; // Estilos principales de PrimeVue
 import 'primeicons/primeicons.css'; // Iconos de PrimeIcons

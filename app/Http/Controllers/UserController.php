@@ -11,4 +11,8 @@ class UserController extends Controller
         $user = User::all(["id","name","email"]);
         return response()->json($user);
     }
+    public function delete($id){
+        $user = User::find($id)->delete();
+        return response()->json("delete");
+    }
 }

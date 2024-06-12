@@ -7,9 +7,16 @@
             <Column field="email" header="Email"></Column>
             <Column header="Edit">
                 <template #body="slotProps">
-                    <Button severity="warning" @click="editUser(slotProps.data)">Editar</Button>
-                </template>
-             
+                    <Button severity="warning" @click="editUser(slotProps.data)"><span class="pi pi-search"></span>Editar
+                    </Button>
+                </template>    
+            </Column>
+            <Column header="Delete">
+                <template #body="slotProps">
+                    <Button severity="danger" @click="deleteUser(slotProps.data)"><i class="pi pi-times"></i>
+                        Eliminar
+                    </Button>
+                </template>    
             </Column>
         </DataTable>
     </div>
@@ -44,6 +51,13 @@ export default {
             this.showModal = true
             this.objeto = user
         },
+        deleteUser(user){
+            //delete data
+            axios.delete(`/api/user/${user.id}`).then(response => {
+              if(response.data == "delete") this.getUser()
+            }).catch(error => console.log(error))
+        }
+        ,
         getUser() {
             axios.get("/api/user").then(response => {
                 this.users = response.data
